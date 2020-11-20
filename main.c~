@@ -1,0 +1,17 @@
+#include <string.h>
+
+int main(void)
+{
+
+ int *ptr;
+ //printf("%p\n", c);
+ //printf("%p", str);
+
+ ptr = malloc(111);
+ *ptr = 1;
+
+ printf("%#lx", ptr);
+
+
+  return 0;
+}
