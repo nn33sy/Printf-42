@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/16 18:06:59 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/18 18:38:05 by how-choon        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	count;
-	unsigned int	i;
+	size_t		count;
+	size_t		i;
 
 	count = 0;
 	if (dest == NULL || src == NULL)
-		return(0);
+		return (0);
 	while (src[count] != '\0')
 		count++;
 	i = 0;
@@ -21,10 +33,3 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	dest[i] = '\0';
 	return (count);
 }
-/*
-int main()
-{
-	char s1[] = "Hello world";
-	char s2[] = "Yessysysy";
-	printf("%d",ft_strlcpy(s1,s2,0));
-}*/

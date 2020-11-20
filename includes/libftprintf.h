@@ -33,6 +33,11 @@ typedef struct s_chain t_chain;
 int     ft_printf2(const char * restrict format,...);
 
 
+//Fonction basics
+int ft_comp(char *a,char b);
+char *ft_itoa_long(long n);
+char *ft_itoa_base(long n, char *base);
+
 //Definition paramètre
 void ft_initialize_param(t_param *param);
 void ft_initialize_type(t_param *param);
@@ -54,9 +59,3 @@ void ft_prec(t_argument *arg);
 void ft_type(t_argument *arg, t_param *param);
 
 //Print %d
-int ft_putnbr_length(long n);
-void ft_putnbr_ope(long n, char *chain);
-void ft_swap_chain(char *chain, int length);
-char *ft_c(int n);
-char *ft_integer(int n);
-char *ft_unsignedint(unsigned int n);

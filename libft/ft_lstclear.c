@@ -1,27 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/16 19:48:21 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/16 19:48:24 by how-choon        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-//printf("ok");
-
 	if (*lst != NULL)
 	{
 		if ((*lst)->next != NULL)
-			ft_lstclear((&(*lst)->next),del);
+			ft_lstclear((&(*lst)->next), del);
 		del((*lst)->content);
 		free(*lst);
 		*lst = NULL;
 	}
 }
-/*
-void			lstdelone_f(void *d) {
-	free(d);
-}
-int main()
-{
-t_list *l = ft_lstnew(strdup("nyancat"));
-
-        l->next = ft_lstnew(strdup("#TEST#"));
-        ft_lstclear(&l, lstdelone_f);
-	
-}*/

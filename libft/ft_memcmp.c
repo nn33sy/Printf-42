@@ -1,32 +1,33 @@
-#include <string.h>
-#include <assert.h>
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/16 17:48:39 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/18 21:37:28 by how-choon        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	unsigned char *s1_bis;
-	unsigned char *s2_bis;
+	size_t			i;
+	unsigned char	*s1_bis;
+	unsigned char	*s2_bis;
 
 	s1_bis = (unsigned char *)s1;
 	s2_bis = (unsigned char *)s2;
 	i = 0;
-	while ( i < n - 1 && s1_bis[i] == s2_bis[i])
+	if (*s1_bis == '\0' && *s2_bis != '\0')
+		return (-1);
+	if (*s2_bis == '\0' && *s1_bis != '\0')
+		return (1);
+	while (i < n - 1 && s1_bis[i] == s2_bis[i])
 		i++;
 	if (i == 0)
 		return (0);
-	return(s1_bis[i] - s2_bis[i]);
+	return (s1_bis[i] - s2_bis[i]);
 }
-/*
-int main() {
-
-    char array1 [] ="\xff\xaa\xde\x12";
-    char array2 [] ="\xff\xaa\xde\x12MACOSAAAAA";
-    size_t size = 4;
-
-    printf("%d et %d \n ",memcmp( array1, array2, size),ft_memcmp( array1, array2, size) );       
-    printf(" %d %d \n", memcmp( array1, array1, size) ,ft_memcmp( array1, array1, size) );       
-    printf("%d %d", memcmp( array2, array1, size),ft_memcmp( array2, array1, size) );       
-    
-    printf( "Test is ok\n" );
-    
-    return 0;
-}*/

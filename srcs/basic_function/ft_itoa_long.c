@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 19:03:00 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/19 22:07:47 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/20 21:10:12 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/20 21:27:07 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,20 @@ static void	ft_ope(long n, char *chain)
 	}
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa_long(long n)
 {
-	long	n2;
 	long	length;
 	char	*chain;
 
-	n2 = (long)n;
-	length = ft_checklength(n2);
+	length = ft_checklength(n);
 	chain = (char *)malloc(sizeof(char) * (length + 1));
 	if (chain == 0)
 		return (0);
-	ft_ope(n2, chain);
-	if (n2 > 0)
+	ft_ope(n, chain);
+	if (n > 0)
 		ft_swap_chain(chain, length);
 	else
 		ft_swap_chain(&chain[1], length - 1);
 	return (chain);
 }
+

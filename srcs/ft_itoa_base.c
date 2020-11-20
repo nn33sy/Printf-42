@@ -1,81 +1,78 @@
-static int ft_checkorder_base(int  n, int len)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/20 23:10:13 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/21 00:18:32 by how-choon        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+static int ft_checkorder_base(long long n, int len)
 {
 	int	order;
-	long	n2;
 
 	order = 0;
 	if (n == 0)
-		return (2);
-	if (n < 0)
-	{
-		n2 =(long)(-n);
-		order++;
-	}
-	else
-		n2 = n;
-	while (n2 / len != 0)
+		return (1);
+	while (n / len != 0)
 	{
 		order++;
-		n2 /= len;
+		n /= len;
 	}
 	return (order + 1);
 
 }
-static void ft_swap(char *s, int n, int order)
+static void ft_swap(char *s, int order)
 {
 	char inter;
 
-	if (n < 0)
-		ft_swap(&s[1],1, order - 1);
-	else
-	{
 	if (order > 1)
 	{
 		inter = s[0];
 		s[0] = s[order - 1];
 		s[order - 1] = inter;
-		ft_swap(&s[1], n, order - 2);
-	}
+		ft_swap(&s[1], order - 2);
 	}
 }
 
-char *ft_itoa_base(int n, char *base)
+static void	ft_ope(long long n, char *s, int len, char *base)
+{
+	int	i;
+
+	i = 0;
+        if (n == 0)
+        {
+                s[i] = base[0];
+                i++;
+        }
+        while (n != 0)
+        {
+                s[i] = base[n % len];
+                n /= len;
+                i++;
+        }
+	s[i] = '\0';
+}
+
+char *ft_itoa_base(long long n, char *base)
 {
 	char *s;
 	int order;
-	int i;
-	long	n2;
-	int	len;
+	int len;
 
-	n2 = (long)n;
-	i = 0;
-	len = 16;
-	order = ft_checkorder_base(n2,len);
+	if (n < 0)
+		n *= -1;
+	len = ft_strlen(base);
+	order = ft_checkorder_base(n, len);
 	s = (char*)malloc(sizeof(char) * (order + 1));
 	if (s == 0)
 		return (0);
-	if (n == 0)
-	{
-		s[i]= base[0];
-		i++;
-	}
-	if (n2 < 0)
-	{
-		s[i] = '-';
-		i++;
-		n2 *= -1;
-	}
-	while (n2 != 0)
-	{
-		s[i] = base[n2 % 16];
-		n2 /= len;
-		i++;
-	};
-	s[i] = '\0';
-	ft_swap(s,n, order);
+	ft_ope(n, s, len, base);
+	ft_swap(s,order);
 	return (s);
 }
-int main()
-{
-	printf("%s",ft_itoa_base(10217,"0123456789abcdef"));
-}
+

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_comp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 19:17:44 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/16 19:17:51 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/20 20:05:21 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/20 20:05:49 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putendl_fd(char *s, int fd)
+int	ft_comp(char *a, char b)
 {
-	char c;
-
-	if (s != NULL)
+	if (a == 0)
+		return (0);
+	while (*a != '\0')
 	{
-		ft_putstr_fd(s, fd);
-		c = 10;
-		ft_putchar_fd(c, fd);
+		if (*a == b)
+			return (1);
+		a++;
 	}
+	return (0);
 }

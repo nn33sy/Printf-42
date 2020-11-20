@@ -6,7 +6,7 @@ all: $(NAME)
 
 $(NAME):
 	make re -C libft/
-	gcc -Iincludes  srcs/*.c *.c libft/libft.a
+	gcc -Iincludes  srcs/*.c srcs/*/*.c *.c libft/libft.a
 	./a.out
 
 clean:
