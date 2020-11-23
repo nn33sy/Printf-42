@@ -2,26 +2,6 @@
 #include "libft.h"
 #include "libftprintf.h"
 
-void ft_s(t_argument *arg, t_chain *chain, va_list ap)
-{
-	chain->chain_arg = va_arg(ap, char *);
-	ft_putstr_fd(chain->chain_arg, 1);
-}
-
-void ft_c(t_argument *arg, t_chain *chain, va_list ap)
-{
-	chain->chain_arg = (char*)malloc((sizeof(char) * 2));
-	chain->chain_arg[0] = va_arg(ap, int);
-	chain->chain_arg[1] = '\0';
-	ft_putstr_fd(chain->chain_arg, 1);
-}
-
-void ft_d(t_argument *arg, t_chain *chain, va_list ap)
-{
-	chain->chain_arg = ft_itoa_long((va_arg(ap, long)));
-	ft_putstr_fd(chain->chain_arg, 1);
-}
-
 void ft_x(t_argument *arg, t_chain *chain, va_list ap)
 {
 	chain->chain_arg = ft_itoa_base(va_arg(ap, long long), "0123456789abcdef");

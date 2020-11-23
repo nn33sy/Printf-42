@@ -6,10 +6,12 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 23:10:13 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/21 00:18:32 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/11/23 14:30:18 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include "libftprintf.h"
 
 static int ft_checkorder_base(long long n, int len)
 {

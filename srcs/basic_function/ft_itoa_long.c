@@ -6,13 +6,13 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 21:10:12 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/20 21:27:07 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/11/24 00:15:42 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_checklength(long n)
+static int	ft_checklength(long long n)
 {
 	int count;
 
@@ -42,15 +42,16 @@ static void	ft_swap_chain(char *chain, int length)
 	}
 }
 
-static void	ft_ope(long n, char *chain)
+static void	ft_ope(long long n, char *chain)
 {
 	int	i;
 
 	i = 0;
 	if (n < 0)
 	{
-		chain[i++] = '-';
+		chain[i] = '-';
 		n *= -1;
+		i++;
 	}
 	if (n < 10)
 	{
@@ -64,7 +65,7 @@ static void	ft_ope(long n, char *chain)
 	}
 }
 
-char		*ft_itoa_long(long n)
+char		*ft_itoa_long(long long  n)
 {
 	long	length;
 	char	*chain;

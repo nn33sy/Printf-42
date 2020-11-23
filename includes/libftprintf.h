@@ -35,8 +35,8 @@ int     ft_printf2(const char * restrict format,...);
 
 //Fonction basics
 int ft_comp(char *a,char b);
-char *ft_itoa_long(long n);
-char *ft_itoa_base(long n, char *base);
+char *ft_itoa_long(long long n);
+char *ft_itoa_base(long long n, char *base);
 
 //Definition paramètre
 void ft_initialize_param(t_param *param);
@@ -58,4 +58,9 @@ void ft_prec(t_argument *arg);
 //type
 void ft_type(t_argument *arg, t_param *param);
 
-//Print %d
+//Define conversion
+void ft_s(t_argument *arg, t_chain *chain, va_list ap);
+void ft_c(t_argument *arg, t_chain *chain, va_list ap);
+void ft_d(t_argument *arg, t_chain *chain, va_list ap);
+//Paddingand prec
+void ft_apply_width_ope(t_argument *arg, t_chain *chain, int len);

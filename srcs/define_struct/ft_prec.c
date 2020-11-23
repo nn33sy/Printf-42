@@ -22,5 +22,5 @@ void ft_prec(t_argument *arg)
                 arg->chain = &(arg->chain[count]);
         }
         else
-                arg->prec = 0;
+                arg->prec = -10;
 }

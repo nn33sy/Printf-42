@@ -10,7 +10,7 @@ printf("\n");
 
 //char *chain = ft_itoa_base(-2147483647,"0123456789ABCDEF");
 //printf("%s",chain);
-	int a;
+/*	int a;
     printf("a - declared\n");
     printf("int a = [%d]\n", a);            // example - 1745899614
     printf("int a pointer = [%p]\n", a);    // example - 0x6810505e
@@ -20,5 +20,11 @@ printf("\n");
     printf("\n a - initialized to value of 10\n");
     printf("int a = [%d]\n", a);            // exmaple - 10
     printf("int a pointer = [%p]\n", a); 
-	ft_printf2("resultat de mon printf %p ",a);
+	ft_printf2("resultat de mon printf %p ",a);*/
+
+char a ='c';
+ft_printf2("%.20d",-3);
+printf("\n%.20d",-13536710);
+//printf("\n%20.2s\n",NULL);
+//printf("\n%xp\n",&a);
 }
