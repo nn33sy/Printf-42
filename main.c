@@ -23,7 +23,8 @@ printf("\n");
 	ft_printf2("resultat de mon printf %p ",a);*/
 
 char a ='c';
-ft_printf2("%.20d",-3);
+char *chain;
+ft_printf2("%.20d",-13536710);
 printf("\n%.20d",-13536710);
 //printf("\n%20.2s\n",NULL);
 //printf("\n%xp\n",&a);

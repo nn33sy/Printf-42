@@ -6,7 +6,7 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 21:10:12 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/24 00:15:42 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/11/24 00:31:50 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ static void	ft_ope(long long n, char *chain)
 	}
 	if (n < 10)
 	{
-		chain[i++] = n + '0';
+		chain[i] = n + '0';
+		i++;
 		chain[i] = '\0';
 	}
 	else

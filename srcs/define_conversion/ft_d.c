@@ -6,7 +6,7 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 22:55:48 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/24 00:13:45 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/11/24 00:38:32 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ static void ft_apply_prec_padd(t_argument *arg, t_chain *chain)
 
 void ft_d(t_argument *arg, t_chain *chain, va_list ap)
 {
-        chain->chain_arg = ft_itoa_long((va_arg(ap, long long)));
-    ft_putstr_fd(chain->chain_arg, 1);
-//	ft_apply_prec_padd(arg, chain);
-//	ft_putstr_fd(chain->chain_arg, 1);
+        chain->chain_arg = ft_itoa_long(va_arg(ap, int));
+	ft_apply_prec_padd(arg, chain);
+	ft_putstr_fd(chain->chain_arg, 1);
 }
