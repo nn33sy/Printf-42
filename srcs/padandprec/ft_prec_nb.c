@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags.c                                         :+:      :+:    :+:   */
+/*   ft_prec_nb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:07:24 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/26 17:07:29 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/26 17:59:11 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/26 17:59:15 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_flags(t_argument *arg, t_param *param)
+void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len)
 {
-	char	*flags;
-	int		j;
+	char	*prec;
 
-	flags = (char*)malloc(sizeof(char) * NB_FLAGS_MAX);
-	ft_memset(flags, 0, NB_FLAGS_MAX);
-	if (flags != 0)
-	{
-		j = 0;
-		while (ft_comp(param->flags, *(arg->chain)) == 1)
-		{
-			ft_check_flags(flags, *(arg->chain), &j);
-			(arg->chain)++;
-		}
+	if (chain->chain_arg[0] == '-')
+		(arg->prec)++;
+	prec = (char *)malloc(sizeof(char) * (arg->prec + 1));
+	if (prec == NULL)
+	{	chain->chain_arg = NULL;
+		return ;
 	}
-	arg->flags = flags;
-	arg->nb_flags = ft_strlen(flags);
+	prec = ft_memset(prec, '0', arg->prec);
+	prec[arg->prec - len] = '\0';
+	ft_strlcat(prec, chain->chain_arg, arg->prec + 2);
+	free(chain->chain_arg);
+	chain->chain_arg = prec;
 }

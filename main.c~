@@ -3,14 +3,8 @@
 int main(void)
 {
 
- int *ptr;
- //printf("%p\n", c);
- //printf("%p", str);
-
- ptr = malloc(111);
- *ptr = 1;
-
- printf("%#lx", ptr);
+ft_print("%c", '\0');
+print("%c", '\0');
 
 
   return 0;

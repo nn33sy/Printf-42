@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags.c                                         :+:      :+:    :+:   */
+/*   ft_ope_nb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:07:24 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/26 17:07:29 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/26 17:57:40 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/26 17:57:45 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_flags(t_argument *arg, t_param *param)
+void	ft_ope_nb(t_argument *arg, t_chain *chain)
 {
-	char	*flags;
-	int		j;
+	int	len;
 
-	flags = (char*)malloc(sizeof(char) * NB_FLAGS_MAX);
-	ft_memset(flags, 0, NB_FLAGS_MAX);
-	if (flags != 0)
+	len = ft_strlen(chain->chain_arg);
+	if (arg->prec != -10 && len < arg->prec)
 	{
-		j = 0;
-		while (ft_comp(param->flags, *(arg->chain)) == 1)
-		{
-			ft_check_flags(flags, *(arg->chain), &j);
-			(arg->chain)++;
-		}
+		ft_apply_prec_nb(arg, chain, len);
+		len = arg->prec;
 	}
-	arg->flags = flags;
-	arg->nb_flags = ft_strlen(flags);
+	if (arg->width != -10 && arg->width > len)
+		ft_apply_width_nb(arg, chain, len);
+	else
+		chain->chain_print = chain->chain_arg;
 }

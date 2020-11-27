@@ -66,7 +66,7 @@ static void	ft_ope(long long n, char *chain)
 	}
 }
 
-char		*ft_itoa_long(long long  n)
+char		*ft_itoa_long(long long n)
 {
 	long	length;
 	char	*chain;
@@ -82,4 +82,3 @@ char		*ft_itoa_long(long long  n)
 		ft_swap_chain(&chain[1], length - 1);
 	return (chain);
 }
-

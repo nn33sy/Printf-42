@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags.c                                         :+:      :+:    :+:   */
+/*   ft_xmaj.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:07:24 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/26 17:07:29 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/25 16:41:32 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/25 16:41:34 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_flags(t_argument *arg, t_param *param)
+void	ft_xmaj(t_argument *arg, t_chain *chain, va_list ap)
 {
-	char	*flags;
-	int		j;
+	unsigned int	n;
 
-	flags = (char*)malloc(sizeof(char) * NB_FLAGS_MAX);
-	ft_memset(flags, 0, NB_FLAGS_MAX);
-	if (flags != 0)
-	{
-		j = 0;
-		while (ft_comp(param->flags, *(arg->chain)) == 1)
-		{
-			ft_check_flags(flags, *(arg->chain), &j);
-			(arg->chain)++;
-		}
-	}
-	arg->flags = flags;
-	arg->nb_flags = ft_strlen(flags);
+	n = (unsigned int)va_arg(ap, int);
+	chain->chain_arg = ft_itoa_base(n, "0123456789ABCDEF");
+	ft_ope_nb(arg, chain);
+	ft_putstr_fd(chain->chain_print, 1);
 }

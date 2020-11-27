@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags.c                                         :+:      :+:    :+:   */
+/*   ft_swap_minus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:07:24 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/26 17:07:29 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/26 18:14:36 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/26 18:14:39 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_flags(t_argument *arg, t_param *param)
+void	ft_swap_minus(char *chain)
 {
-	char	*flags;
-	int		j;
+	int	i;
 
-	flags = (char*)malloc(sizeof(char) * NB_FLAGS_MAX);
-	ft_memset(flags, 0, NB_FLAGS_MAX);
-	if (flags != 0)
+	i = 0;
+	while (chain[i] != '-')
+		i++;
+	if (i >= 1)
 	{
-		j = 0;
-		while (ft_comp(param->flags, *(arg->chain)) == 1)
-		{
-			ft_check_flags(flags, *(arg->chain), &j);
-			(arg->chain)++;
-		}
+		if (chain[i - 1] == ' ')
+			chain[i] = ' ';
+		else
+			chain[i] = '0';
 	}
-	arg->flags = flags;
-	arg->nb_flags = ft_strlen(flags);
+	i = 0;
+	while (chain[i] == ' ')
+		i++;
+	if (i >= 1)
+		chain[i - 1] = '-';
+	else
+		chain[0] = '-';
 }
