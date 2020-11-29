@@ -49,6 +49,8 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 			len = ft_strlen(chain->chain_print);
 	else
 		len = -1;
+	if (len != -1 && arg->space == 1)
+		len--;
 	free(arg);
 	free(chain);
 return(len);

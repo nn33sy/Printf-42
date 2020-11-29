@@ -155,7 +155,11 @@ printf("%50c", 0);
 
 // printf("%djs djd");
 ft_printf("%05%");
-printf("\n%05%");
+printf("\n%05%\n");
+ft_printf("%% *.5i 42 == |% .5i|\n", 42);
+printf("\n%% *.5i 42 == |% 0*i|\n",7, 42);
+printf("\n%% *.5i 42 == |%          *.5i|\n", 7, 42);
+ft_printf("\n%% *.5i 42 == |%          *.5i|\n", 7, 42);
 // printf("%-5%\n");
 // printf("%05%\n");
 // printf("%-05%\n");

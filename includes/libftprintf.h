@@ -9,6 +9,7 @@ struct s_argument
 	int nb_flags;
 	int width;
 	int prec;
+	int space;
 	char type;
 };
 
