@@ -16,19 +16,6 @@ int p_width_32_lj(void){return test("%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-3
 
 
 
-
-
-
-int d_prec0val0_basic(void){return test("%.0d", 0);}
-int d_prec0val0_implicit(void){return test("%.d", 0);}
-int d_prec0val0_w(void){return test("%5.0d", 0);}
-int d_prec0val0_w_impl(void){return test("%5.d", 0);}
-int d_prec0val0_wlj(void){return test("%-5.0d", 0);}
-int d_prec0val0_wlj_impl(void){return test("%-5.d", 0);}
-
-int i_width_pos_fits(void){return test("%7i", 33);}
-int i_width_neg_fits(void){return test("%7i", -14);}
-
 int i_width_pos_fits_lj(void){return test("%-7i", 33);}
 int i_width_neg_fits_lj(void){return test("%-7i", -14);}
 int i_width_zero_fits_lj(void){return test("%-3i", 0);}

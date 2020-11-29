@@ -29,6 +29,7 @@ SRCS = srcs/basic_function/ft_check_star.c \
        srcs/padandprec/ft_prec_nb.c \
        srcs/padandprec/ft_width_nb.c \
        srcs/padandprec/ft_width_s_c.c\
+       srcs/padandprec/ft_apply_s.c\
        srcs/ft_printf.c 
 
 C_OK		=		"\033[35m"

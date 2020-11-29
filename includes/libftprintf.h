@@ -68,3 +68,4 @@ void	ft_ope_nb(t_argument *arg, t_chain *chain);
 void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len);
 void	ft_apply_width_nb(t_argument *arg, t_chain *chain, int len);
 void	ft_apply_width_ope_char(t_argument *arg, t_chain *chain, int len);
+void	ft_apply_s(t_argument *arg, t_chain *chain);

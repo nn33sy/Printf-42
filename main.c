@@ -154,7 +154,8 @@ printf("%50c", 0);
 // strr[4] ='\0';
 
 // printf("%djs djd");
-ft_printf("%5%");
+ft_printf("%05%");
+printf("\n%05%");
 // printf("%-5%\n");
 // printf("%05%\n");
 // printf("%-05%\n");
