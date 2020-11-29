@@ -1,5 +1,4 @@
-#include "libft.h"
-#include "libftprintf.h"
+
 //#define INT_MAX 2147483647
 #include <stdio.h>
 int main()
@@ -25,7 +24,7 @@ int main()
 
 //ft_printf2("%20.10d",-84);
 //printf("\n%20dh",84);
-//printf("\n%20.10dh",-84);
+printf("\n%20.10dh",-84);
 //printf("\n%20.2s\n",NULL);
 //printf("\n%xp\n",&a);
 //ft_printf2("%030p",&a);
@@ -154,21 +153,30 @@ printf("%50c", 0);
 // strr[4] ='\0';
 
 // printf("%djs djd");
-ft_printf("%05%");
-printf("\n%05%\n");
-ft_printf("%% *.5i 42 == |% .5i|\n", 42);
-printf("\n%% *.5i 42 == |% 0*i|\n",7, 42);
-printf("\n%% *.5i 42 == |%          *.5i|\n", 7, 42);
-ft_printf("\n%% *.5i 42 == |%          *.5i|\n", 7, 42);
+
+
 // printf("%-5%\n");
 // printf("%05%\n");
 // printf("%-05%\n");
+printf("");
+//ft_printf("% c", 'a');
 
 
 
 
+//printf("%2.9p\n", 1234);
+//ft_printf("%2.9p\n", 1234);
 
-
-
+//printf("%.5p",0);
+//ft_printf("% c",-42);
+/*
+printf("%d",ft_printf("%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %*c, %*c", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0));
+printf("\n");
+printf("%d",printf("%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %*c, %*c", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0));
+ printf("\n");
+printf("%d",ft_printf("%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %*c, %*c", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0));
+printf("\n");
+printf("%d",printf("%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %-*c, %*c",0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0));
+printf("\n");*/
 
 }

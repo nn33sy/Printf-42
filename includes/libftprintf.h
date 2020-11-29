@@ -41,6 +41,7 @@ char *ft_itoa_long(long long n);
 char *ft_itoa_base(long long n, char *base);
 void	ft_check_star(t_argument *arg, va_list ap);
 void	ft_swap_minus(char *chain);
+void ft_free(t_argument *arg, t_chain *chain);
 
 //Definition paramètre
 void ft_initialize_param(t_param *param);

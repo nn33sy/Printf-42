@@ -38,5 +38,4 @@ void	ft_initialize_argument(const char *format, t_argument *arg, t_param *param)
 	ft_prec(arg);
 	ft_type(arg,param);
 	arg->chain = temp;
-
 }

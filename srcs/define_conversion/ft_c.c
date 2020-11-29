@@ -39,7 +39,7 @@ void	ft_c(t_argument *arg, t_chain *chain, va_list ap)
 	else
 		chain->chain_arg[0] = caracter;
 	chain->chain_arg[1] = '\0';
-	if (arg->width != -10)
+	if (arg->width != -10 && arg->width != 0)
 		ft_apply_width_ope_char(arg, chain, 1);
 	else
 		chain->chain_print = chain->chain_arg;

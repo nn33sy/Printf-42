@@ -18,6 +18,8 @@ void	ft_ope_nb(t_argument *arg, t_chain *chain)
 	int	len;
 
 	len = ft_strlen(chain->chain_arg);
+	if (arg->prec != -10 && chain->chain_arg[0] == '-')
+		arg->prec++;
 	if (arg->prec != -10 && len < arg->prec)
 	{
 		ft_apply_prec_nb(arg, chain, len);

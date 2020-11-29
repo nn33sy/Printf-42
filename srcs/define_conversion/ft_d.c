@@ -16,7 +16,6 @@
 void	ft_d(t_argument *arg, t_chain *chain, va_list ap)
 {
 	long long	n;
-	int			len;
 
 	ft_check_star(arg, ap);
 	n = va_arg(ap, int);
@@ -27,7 +26,6 @@ void	ft_d(t_argument *arg, t_chain *chain, va_list ap)
 		}
 	else
 		chain->chain_arg = ft_itoa_long(n);
-	len = ft_strlen(chain->chain_arg);
 	ft_ope_nb(arg, chain);
 	if (n < 0)
 		ft_swap_minus(chain->chain_print);

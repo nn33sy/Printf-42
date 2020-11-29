@@ -6,6 +6,7 @@ OBJ = $(SRCS:.c=.o)
 SRCS = srcs/basic_function/ft_check_star.c \
        srcs/basic_function/ft_comp.c       \
        srcs/basic_function/ft_itoa_base.c  \
+       srcs/basic_function/ft_free.c  \
        srcs/basic_function/ft_itoa_long.c  \
        srcs/basic_function/ft_swap_minus.c \
        srcs/define_argu/ft_initialize_param.c \

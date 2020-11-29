@@ -51,8 +51,7 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 		len = -1;
 	if (len != -1 && arg->space == 1)
 		len--;
-	free(arg);
-	free(chain);
+	ft_free(arg, chain);
 return(len);
 }
 
@@ -79,19 +78,22 @@ int	ft_printf(const char * format,...)
 					format++;
 					while (ft_comp(param->type_char, *format) == 0 && *format != '%')					
 						format++;
-					inter = 0;
 				}
 		}
 		else
 		{
 			ft_putchar_fd(*format,1);
-			inter++;
+			res++;
 		}
 		format++;
-		inter += res;
+		res += inter;
+		inter = 0;
 	}
 	va_end(ap);
-return(inter);
+	free(param->flags);
+	free(param->type_char);
+	free(param);
+return(res);
 }
 
 

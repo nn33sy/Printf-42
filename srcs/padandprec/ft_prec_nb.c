@@ -17,8 +17,6 @@ void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len)
 {
 	char	*prec;
 
-	if (chain->chain_arg[0] == '-')
-		(arg->prec)++;
 	prec = (char *)malloc(sizeof(char) * (arg->prec + 1));
 	if (prec == NULL)
 	{	chain->chain_arg = NULL;
