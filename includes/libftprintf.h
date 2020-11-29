@@ -62,6 +62,7 @@ void ft_x(t_argument *arg, t_chain *chain, va_list ap);
 void ft_xmaj(t_argument *arg, t_chain *chain, va_list ap);
 void ft_p(t_argument *arg, t_chain *chain, va_list ap);
 void	ft_u(t_argument *arg, t_chain *chain, va_list ap);
+void    ft_pmaj(t_argument *arg, t_chain *chain, va_list ap);
 //Paddingand prec
 void	ft_ope_nb(t_argument *arg, t_chain *chain);
 void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len);

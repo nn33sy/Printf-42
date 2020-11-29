@@ -15,6 +15,21 @@
 
 void	ft_check_star(t_argument *arg, va_list ap)
 {
+	int	j;
 	if (arg->width == -1)
-		arg->width = va_arg(ap, int);
+		{
+			arg->width = va_arg(ap, int);
+			if (arg->width < 0)
+				{
+					arg->width *= -1;
+					j = 0;
+					ft_check_flags(arg->flags,'-',&j);
+				}
+		}
+	if (arg->prec == -1)
+	{
+		arg->prec = va_arg(ap, int);
+		if (arg->prec < 0)
+			arg->prec = -10;
+	}
 }

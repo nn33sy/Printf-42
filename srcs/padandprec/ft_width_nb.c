@@ -28,7 +28,10 @@ void	ft_apply_width_nb(t_argument *arg, t_chain *chain, int len)
 	else
 		width = ft_memset(width, ' ', arg->width);
 	if (ft_comp(arg->flags, '-') == 1)
-		ft_memcpy(width, chain->chain_arg, len + 1);
+	{
+		ft_memcpy(width, chain->chain_arg, len);
+		width[arg->width] = '\0';
+	}
 	else
 		ft_memcpy(&width[arg->width - len], chain->chain_arg, len + 1);
 	chain->chain_print = width;

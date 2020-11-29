@@ -16,15 +16,18 @@
 void	ft_d(t_argument *arg, t_chain *chain, va_list ap)
 {
 	long long	n;
+	int			len;
 
+	ft_check_star(arg, ap);
 	n = va_arg(ap, int);
 	if (n == 0 && arg->prec == 0)
 		{
-			chain->chain_print = (char*)malloc(sizeof(char) * 1);
-			chain->chain_print[0] = '\0';
-			return ;
+			chain->chain_arg = (char*)malloc(sizeof(char) * 1);
+			chain->chain_arg[0] = '\0';
 		}
-	chain->chain_arg = ft_itoa_long(n);
+	else
+		chain->chain_arg = ft_itoa_long(n);
+	len = ft_strlen(chain->chain_arg);
 	ft_ope_nb(arg, chain);
 	if (n < 0)
 		ft_swap_minus(chain->chain_print);

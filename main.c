@@ -40,9 +40,9 @@ int main()
 //ft_printf("Hello 42 school! %s", NULL);
 //printf("\nHello 42 school! %s", NULL);
 //ft_printf("p36 %.0u\n", 0);
-ft_printf("%7d", 33);
-printf("\n%7d\n", 33);
-
+// ft_printf("%7d", 33);
+// printf("\n%7d\n", 33);
+/*
 printf("2\n");
 ft_printf("%7d", -14);
 printf("\n%7d\n", -14);
@@ -68,23 +68,96 @@ ft_printf("%07d", -54);
 printf("\n%07d\n", -54);
 
 printf("8\n");
-ft_printf("%3.7d", -2375);
+ ft_printf("%3.7d", -2375);
 printf("\n%3.7d\n", -2375);
 
 
+printf("9\n");
+ft_printf("%.0d", 0);
+printf("%.0d", 0);
+
+printf("10\n");
+ft_printf("%.d", 0);
+printf("%.d", 0);
+
+printf("11\n");
+ft_printf("%5.0dh", 0);
+printf("\n%5.0dh\n", 0);
+
+printf("12\n");
+ft_printf("%5.dh", 0);
+printf("\n%5.dh\n", 0);
+
+printf("13\n");
+ft_printf("%-5dh", 10);
+printf("\n%-5dh\n", 10);
+
+printf("14\n");
+ft_printf("%-5.dh", 0);
+printf("\n%-5.dh\n", 0);
+
+printf("15\n");
+ft_printf("%7i", 33);
+printf("\n%7i\n", 33);
+
+printf("16\n");
+ft_printf("%7i", -14);
+printf("\n%7i\n", -14);
 
 
+printf("14\n");
+ft_printf("%-5.xh", 0);
+printf("\n%-5.xh\n", 0);
+
+printf("15\n");
+ft_printf("%5.0ih", 0);
+printf("\n%5.0ih\n", 0);
+
+printf("15\n");
+ft_printf("%5ch", '\0');
+printf("\n%5ch\n", '\0');
+
+printf("16\n");
+ft_printf("%10.5d", -216);
+printf("\n%10.5d\n", -216);
+
+printf("17\n");
+ ft_printf("%3dh", 0);
+printf("\n%3dh\n", 0);
+
+printf("18\n");
+ft_printf("%7d", -14);
+printf("\n%7d\n", -14);
 
 
+ft_printf("%0*dh",-10,5);
+printf("\n%0*dh\n",-10,5);
 
+ft_printf("%.*d", 10, 12345);
+printf("\n%.*d\n", 10, 12345);
 
+ft_printf("%.*s",0,"hello");
+printf("\n%.*s\n", -1, "hello");
 
+ft_printf("%i 0000042 == \n", 0042);
+ft_printf("%c", 0);
+printf("%50c", 0);
+*/
+// if (0 == '\0')
+//     printf("olol\n");
+// char *strr;
+// strr = malloc(10);
+// strr[0]= 'a';
+// strr[1] = 'b';
+// strr[2] = 0;
+// strr[3]='c';
+// strr[4] ='\0';
 
-
-
-
-
-
+// printf("%djs djd");
+ft_printf("%5%");
+// printf("%-5%\n");
+// printf("%05%\n");
+// printf("%-05%\n");
 
 
 

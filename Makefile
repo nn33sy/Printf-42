@@ -15,6 +15,7 @@ SRCS = srcs/basic_function/ft_check_star.c \
        srcs/define_conversion/ft_s.c \
        srcs/define_conversion/ft_x.c \
        srcs/define_conversion/ft_u.c \
+       srcs/define_conversion/ft_pmaj.c \
        srcs/define_conversion/ft_xmaj.c \
        srcs/define_struct/ft_check_flags.c \
        srcs/define_struct/ft_copyarg.c \

@@ -20,6 +20,7 @@ void	ft_p(t_argument *arg, t_chain *chain, va_list ap)
 	char			*chain_inter;
 	char			*hex;
 
+	ft_check_star(arg, ap);
 	ptn = va_arg(ap, void *);
 	ad = (unsigned long)ptn;
 	hex = ft_strdup("0x");

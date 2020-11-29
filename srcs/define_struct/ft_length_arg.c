@@ -29,9 +29,14 @@ int	ft_length_arg(const char *format, t_param *param)
 	}
 	if (format[l] == '.')
 		l++;
-	while (format[l] >= '0' && format[l] <= '9')
+	if (format[l] == '*')
 		l++;
-	if (ft_comp(param->type_char, format[l]) == 1)
+	else
+	{
+		while (format[l] >= '0' && format[l] <= '9')
+			l++;
+	}
+	if (ft_comp(param->type_char, format[l]) == 1 || format[l] == '%')
 		l++;
 	else
 		l = 0;

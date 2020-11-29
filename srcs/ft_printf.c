@@ -35,16 +35,18 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 		case 'x':
 			ft_x(arg,chain,ap);
 			break;
-
 		case 'X':
 			ft_xmaj(arg,chain,ap);
 			break;
 		case 'p':
 			ft_p(arg, chain, ap);
 			break;
+		case 'P':
+			ft_pmaj(arg, chain, ap);
+			break;
 		}
 	if (chain->chain_print != NULL)
-		len = ft_strlen(chain->chain_print);
+			len = ft_strlen(chain->chain_print);
 	else
 		len = -1;
 	free(arg);
@@ -71,10 +73,12 @@ int	ft_printf(const char * format,...)
 		{
 			inter = ft_print_argument(format,ap,param);
 			if (inter != -1)
-					while (ft_comp(param->type_char, *format) == 0)					
-						format++;	
-			else
-					ft_putchar_fd(*format,1);
+				{
+					format++;
+					while (ft_comp(param->type_char, *format) == 0 && *format != '%')					
+						format++;
+					inter = 0;
+				}
 		}
 		else
 		{

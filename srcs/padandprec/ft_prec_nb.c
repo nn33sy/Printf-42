@@ -26,7 +26,7 @@ void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len)
 	}
 	prec = ft_memset(prec, '0', arg->prec);
 	prec[arg->prec - len] = '\0';
-	ft_strlcat(prec, chain->chain_arg, arg->prec + 2);
+	ft_strlcat(prec, chain->chain_arg, arg->prec + 1);
 	free(chain->chain_arg);
 	chain->chain_arg = prec;
 }

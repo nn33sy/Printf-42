@@ -29,7 +29,9 @@ void	ft_width(t_argument *arg)
 	while (arg->chain[count] >= '0' && arg->chain[count] <= '9')
 		count++;
 	width = (char *)malloc(sizeof(char) * (count + 1));
-	if (width == 0 || count == 0)
+	if (count == 0)
+		return;
+	if (width == 0)
 		return ;
 	ft_memset(width, 0, count + 1);
 	ft_memcpy(width, arg->chain, count);
