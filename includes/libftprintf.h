@@ -32,6 +32,8 @@ struct s_chain
 
 typedef struct s_chain t_chain;
 
+typedef void (*fct)(t_argument *arg, t_chain *chain, va_list ap);
+
 int     ft_printf(const char *format,...);
 
 

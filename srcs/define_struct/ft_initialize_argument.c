@@ -23,11 +23,11 @@ static void	ft_space(const char *format, t_argument *arg)
 	else 
 		arg->space = 0;
 }
-static int ft_check_free(t_argument *arg, int yeye)
+static int ft_check_free(t_argument *arg, int choice)
 {
-		if (arg->chain == NULL && yeye == 0)
+		if (arg->chain == NULL && choice == 0)
 			return (-1);
-		if (arg->flags == NULL && yeye == 1)
+		if (arg->flags == NULL && choice == 1)
 		{
 			free(arg->chain);
 			return(-1);

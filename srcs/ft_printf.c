@@ -3,6 +3,43 @@
 #include "libftprintf.h"
 
 
+static void ft_f(fct **ad,t_argument *arg, t_chain *chain, va_list ap)
+{
+	char	*index;
+	int i;
+	fct	*tab;
+
+	tab = *ad;
+	index =ft_strdup("scdiuxXpP");
+	i=-1;
+	while (++i < 9)
+	{
+		if (arg->type == index[i])
+			{
+				(*tab[i])(arg, chain, ap);
+				return;
+			}
+	}
+	free(index);
+}
+
+static void ft_tab(t_argument *arg, t_chain *chain, va_list ap)
+{
+	fct		*tab;
+
+	tab =(fct*)malloc(sizeof(tab) * 10);
+	tab[0] = &ft_s;
+	tab[1] = &ft_c;
+	tab[2] = &ft_d;
+	tab[3] = &ft_d;
+	tab[4] = &ft_u;
+	tab[5] = &ft_x;
+	tab[6] = &ft_xmaj;
+	tab[7] = &ft_p;
+	tab[8] = &ft_pmaj;
+	ft_f(&tab,arg,chain,ap);
+}
+
 int ft_print_argument(const char *format, va_list ap, t_param *param)
 {
 	t_argument *arg;
@@ -17,35 +54,7 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 		return(-1);
 	}
 	chain = (t_chain *)malloc(sizeof(t_chain));
-	switch(arg->type){
-		case 's':
-			ft_s(arg, chain, ap);
-			break;
-		case 'c':
-			ft_c(arg, chain, ap);
-			break;
-		case 'd':
-			ft_d(arg, chain, ap);
-			break;
-		case 'i':
-			ft_d(arg, chain, ap);
-			break;
-		case 'u':
-			ft_u(arg, chain, ap);
-			break;
-		case 'x':
-			ft_x(arg,chain,ap);
-			break;
-		case 'X':
-			ft_xmaj(arg,chain,ap);
-			break;
-		case 'p':
-			ft_p(arg, chain, ap);
-			break;
-		case 'P':
-			ft_pmaj(arg, chain, ap);
-			break;
-		}
+	ft_tab(arg, chain, ap);
 	if (chain->chain_print != NULL)
 			len = ft_strlen(chain->chain_print);
 	else
@@ -56,14 +65,13 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 return(len);
 }
 
-
 int	ft_printf(const char * format,...)
 {
-	va_list ap;
-	t_param *param;
-	int	res;
-	int	inter;
-
+	va_list		ap;
+	t_param		*param;
+	int			res;
+	int			inter;
+	
 	va_start(ap,format);
 	param = malloc(sizeof(t_param));
 	ft_initialize_param(param);
@@ -83,12 +91,11 @@ int	ft_printf(const char * format,...)
 		}
 		else
 		{
-			ft_putchar_fd(*format,1);
+			ft_putchar_fd(*format, 1);
 			res++;
 		}
 		format++;
 		res += inter;
-		inter = 0;
 	}
 	va_end(ap);
 	free(param->flags);
