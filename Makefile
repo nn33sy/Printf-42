@@ -3,35 +3,35 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 OBJ = $(SRCS:.c=.o)
 
-SRCS = srcs/basic_function/ft_check_star.c \
-       srcs/basic_function/ft_comp.c       \
-       srcs/basic_function/ft_itoa_base.c  \
-       srcs/basic_function/ft_free.c  \
-       srcs/basic_function/ft_itoa_long.c  \
-       srcs/basic_function/ft_swap_minus.c \
-       srcs/define_argument/ft_initialize_param.c \
-       srcs/define_conversion/ft_c.c \
-       srcs/define_conversion/ft_d.c \
-       srcs/define_conversion/ft_p.c \
-       srcs/define_conversion/ft_s.c \
-       srcs/define_conversion/ft_x.c \
-       srcs/define_conversion/ft_u.c \
-       srcs/define_conversion/ft_pmaj.c \
-       srcs/define_conversion/ft_xmaj.c \
-       srcs/define_argument/ft_check_flags.c \
-       srcs/define_argument/ft_copyarg.c \
-       srcs/define_argument/ft_flags.c \
-       srcs/define_argument/ft_initialize_argument.c \
-       srcs/define_argument/ft_length_arg.c \
-       srcs/define_argument/ft_prec.c \
-       srcs/define_argument/ft_type.c \
-       srcs/define_argument/ft_width.c \
-       srcs/padandprec/ft_ope_nb.c \
-       srcs/padandprec/ft_prec_nb.c \
-       srcs/padandprec/ft_width_nb.c \
-       srcs/padandprec/ft_width_s_c.c\
-       srcs/padandprec/ft_apply_s.c\
-       srcs/ft_printf.c 
+SRCS = basic_function/ft_check_star.c \
+      basic_function/ft_comp.c       \
+      basic_function/ft_itoa_base.c  \
+      basic_function/ft_free.c  \
+      basic_function/ft_itoa_long.c  \
+      basic_function/ft_swap_minus.c \
+      define_argument/ft_initialize_param.c \
+      define_conversion/ft_c.c \
+      define_conversion/ft_d.c \
+      define_conversion/ft_p.c \
+      define_conversion/ft_s.c \
+      define_conversion/ft_x.c \
+      define_conversion/ft_u.c \
+      define_conversion/ft_pmaj.c \
+      define_conversion/ft_xmaj.c \
+      define_argument/ft_check_flags.c \
+      define_argument/ft_copyarg.c \
+      define_argument/ft_flags.c \
+      define_argument/ft_initialize_argument.c \
+      define_argument/ft_length_arg.c \
+      define_argument/ft_prec.c \
+      define_argument/ft_type.c \
+      define_argument/ft_width.c \
+      padandprec/ft_ope_nb.c \
+      padandprec/ft_prec_nb.c \
+      padandprec/ft_width_nb.c \
+      padandprec/ft_width_s_c.c\
+      padandprec/ft_apply_s.c\
+      ft_printf.c 
 
 # COLORS
 C_NO	=	"\033[00m"
