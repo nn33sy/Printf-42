@@ -16,46 +16,48 @@
 static void	ft_space(const char *format, t_argument *arg)
 {
 	if (*format == ' ')
-		{
-			arg->space = 1;
-			ft_putchar_fd(' ', 1);
-		}
-	else 
+	{
+		arg->space = 1;
+		ft_putchar_fd(' ', 1);
+	}
+	else
 		arg->space = 0;
 }
-static int ft_check_free(t_argument *arg, int choice)
+
+static int	ft_check_free(t_argument *arg, int choice)
 {
-		if (arg->chain == NULL && choice == 0)
-			return (-1);
-		if (arg->flags == NULL && choice == 1)
-		{
-			free(arg->chain);
-			return(-1);
-		}
-		return(1);
+	if (arg->chain == NULL && choice == 0)
+		return (-1);
+	if (arg->flags == NULL && choice == 1)
+	{
+		free(arg->chain);
+		return (-1);
+	}
+	return (1);
 }
 
-void	ft_initialize_argument(const char *format, t_argument *arg, t_param *param)
+void		ft_initialize_argument(const char *format, t_argument *arg,
+t_param *param)
 {
 	char *temp;
 
 	arg->chain = NULL;
 	arg->flags = NULL;
 	format++;
-	ft_space(format,arg);
+	ft_space(format, arg);
 	while (*format == ' ')
 		format++;
 	ft_copyarg(format, arg, param);
 	if (ft_check_free(arg, 0) == -1)
-		return;
+		return ;
 	temp = arg->chain;
-	ft_flags(arg,param);
+	ft_flags(arg, param);
 	if (ft_check_free(arg, 1) == -1)
-		return;
+		return ;
 	ft_width(arg);
 	if (arg->width > 0 && arg->space == 1)
 		arg->width--;
 	ft_prec(arg);
-	ft_type(arg,param);
+	ft_type(arg, param);
 	arg->chain = temp;
 }

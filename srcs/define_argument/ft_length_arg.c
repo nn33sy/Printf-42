@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_initialize_param.c                              :+:      :+:    :+:   */
+/*   ft_length_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:16:46 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/25 16:16:51 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/26 17:14:33 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/26 17:14:36 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_initialize_param(t_param *param)
+int	ft_length_arg(const char *format, t_param *param)
 {
-	if (param != 0)
+	int	l;
+
+	l = 0;
+	while (ft_comp(param->flags, format[l]) == 1)
+		l++;
+	if (format[l] == '*')
+		l++;
+	else
 	{
-		param->flags = ft_strdup("-0");
-		param->type_char = ft_strdup("cspdiuxXP");
+		while (format[l] >= '0' && format[l] <= '9')
+			l++;
 	}
+	if (format[l] == '.')
+		l++;
+	if (format[l] == '*')
+		l++;
+	else
+	{
+		while (format[l] >= '0' && format[l] <= '9')
+			l++;
+	}
+	if (ft_comp(param->type_char, format[l]) == 1 || format[l] == '%')
+		return (l + 1);
+	else
+		return (0);
 }

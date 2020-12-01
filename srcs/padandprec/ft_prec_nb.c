@@ -19,7 +19,8 @@ void	ft_apply_prec_nb(t_argument *arg, t_chain *chain, int len)
 
 	prec = (char *)malloc(sizeof(char) * (arg->prec + 1));
 	if (prec == NULL)
-	{	chain->chain_arg = NULL;
+	{
+		chain->chain_arg = NULL;
 		return ;
 	}
 	prec = ft_memset(prec, '0', arg->prec);

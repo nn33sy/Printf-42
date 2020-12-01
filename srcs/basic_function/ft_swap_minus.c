@@ -23,14 +23,14 @@ void	ft_swap_minus(char *chain)
 	if (i >= 1)
 	{
 		if (chain[i - 1] == ' ')
-			return;
+			return ;
 		else
 			chain[i] = '0';
 	}
 	i = 0;
 	while (chain[i] == ' ')
 		i++;
-	if (i >= 1) 
+	if (i >= 1)
 		chain[i] = '-';
 	else
 		chain[0] = '-';

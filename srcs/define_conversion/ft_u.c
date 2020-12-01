@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_u.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/01 18:31:57 by how-choon         #+#    #+#             */
+/*   Updated: 2020/12/01 18:32:03 by how-choon        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "libftprintf.h"
 
@@ -8,10 +20,10 @@ void	ft_u(t_argument *arg, t_chain *chain, va_list ap)
 	ft_check_star(arg, ap);
 	n = (unsigned int)va_arg(ap, int);
 	if (n == 0 && arg->prec == 0)
-		{
-			chain->chain_arg = (char*)malloc(sizeof(char) * 1);
-			chain->chain_arg[0] = '\0';
-		}
+	{
+		chain->chain_arg = (char*)malloc(sizeof(char) * 1);
+		chain->chain_arg[0] = '\0';
+	}
 	else
 		chain->chain_arg = ft_itoa_long(n);
 	ft_ope_nb(arg, chain);

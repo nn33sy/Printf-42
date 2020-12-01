@@ -33,7 +33,7 @@ void	ft_prec(t_argument *arg)
 			count++;
 		prec = (char*)malloc(sizeof(char) * (count + 1));
 		if (prec == 0)
-				return;
+			return ;
 		ft_memset(prec, 0, count + 1);
 		ft_memcpy(prec, arg->chain, count);
 		arg->prec = ft_atoi(prec);

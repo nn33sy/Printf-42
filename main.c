@@ -159,7 +159,7 @@ printf("%50c", 0);
 // printf("%-5%\n");
 // printf("%05%\n");
 // printf("%-05%\n");
-ft_printf("abcd%%efg%-23.10dgh%42.4u%+2.10i%-22c%.23s", -42, 42u, -56, 'z', "this is a string followed by a float: ", 2.33456);
+printf("%d",25/0);
 //ft_printf("abcd%%efg%-23.10dgh%42.4u%+2.10i%-22c%.23s%.32f", -42, 42u, -56, 'z', "this is a string followed by a float: ", 2.33456);
 //printf("%5.%");
 //ft_printf("% c", 'a');

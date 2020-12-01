@@ -9,7 +9,7 @@ SRCS = srcs/basic_function/ft_check_star.c \
        srcs/basic_function/ft_free.c  \
        srcs/basic_function/ft_itoa_long.c  \
        srcs/basic_function/ft_swap_minus.c \
-       srcs/define_argu/ft_initialize_param.c \
+       srcs/define_struct/ft_initialize_param.c \
        srcs/define_conversion/ft_c.c \
        srcs/define_conversion/ft_d.c \
        srcs/define_conversion/ft_p.c \
@@ -42,9 +42,8 @@ OK			=		$(C_OK)OK$(C_NO)
 all: $(NAME)
 
 %.o: %.c
-		printf "[ft_printf] Compiling [.:]\r"
-		$(CC) -Iincludes $(CFLAGS) -c $< -o $@
-		printf "[ft_printf] Compiling [:.]\r"
+		@$(CC) -Iincludes $(CFLAGS) -c $< -o $@
+              @echo "Linking" [ $< ] $(OK)
 
 $(NAME): $(OBJ)
 	make -C libft/

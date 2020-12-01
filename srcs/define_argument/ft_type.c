@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_length_arg.c                                    :+:      :+:    :+:   */
+/*   ft_type.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:14:33 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/26 17:14:36 by how-choon        ###   ########.fr       */
+/*   Created: 2020/11/26 17:42:51 by how-choon         #+#    #+#             */
+/*   Updated: 2020/11/26 17:42:54 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libftprintf.h"
 
-int	ft_length_arg(const char *format, t_param *param)
+void	ft_type(t_argument *arg, t_param *param)
 {
-	int	l;
-
-	l = 0;
-	while (ft_comp(param->flags, format[l]) == 1)
-		l++;
-	if (format[l] == '*')
-		l++;
-	else
+	if (*(arg->chain) == '%')
 	{
-		while (format[l] >= '0' && format[l] <= '9')
-			l++;
+		arg->type = 'P';
+		return ;
 	}
-	if (format[l] == '.')
-		l++;
-	if (format[l] == '*')
-		l++;
+	if (ft_comp(param->type_char, *(arg->chain)) == 1)
+		arg->type = *(arg->chain);
 	else
-	{
-		while (format[l] >= '0' && format[l] <= '9')
-			l++;
-	}
-	if (ft_comp(param->type_char, format[l]) == 1 || format[l] == '%')
-		l++;
-	else
-		l = 0;
-	return (l);
+		arg->type = 0;
 }

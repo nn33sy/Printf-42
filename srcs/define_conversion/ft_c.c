@@ -13,21 +13,22 @@
 #include "libft.h"
 #include "libftprintf.h"
 
-static void ft_print_car(char *str, int carac)
+static void	ft_print_car(char *str, int carac)
 {
-    int i;
+	int i;
 
-    i = 0;
+	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '*' && carac == 0)
-			ft_putchar_fd(0,1);
+			ft_putchar_fd(0, 1);
 		else
-			ft_putchar_fd(str[i],1);
+			ft_putchar_fd(str[i], 1);
 		i++;
 	}
 }
-void	ft_c(t_argument *arg, t_chain *chain, va_list ap)
+
+void		ft_c(t_argument *arg, t_chain *chain, va_list ap)
 {
 	int caracter;
 
