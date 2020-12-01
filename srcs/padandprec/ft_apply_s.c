@@ -17,7 +17,7 @@ void	ft_apply_s(t_argument *arg, t_chain *chain)
 {
 	int len;
 
-	len = ft_strlen(chain->chain_arg);
+	len = (int)ft_strlen(chain->chain_arg);
 	if (arg->prec != -10 && arg->prec < len)
 	{
 		ft_memset(&chain->chain_arg[arg->prec], '\0', len - arg->prec);

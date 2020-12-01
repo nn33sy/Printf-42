@@ -54,7 +54,6 @@ $(NAME): $(OBJ)
 	@make -C libft/
 	@cp libft/libft.a ./$(NAME)
 	@ar rc $@ $^
-	@ranlib $@
 	@echo "Compiling & indexing" [ $(NAME) ] $(SUCCESS)
 
 clean:
