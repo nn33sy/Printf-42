@@ -34,6 +34,8 @@ void		ft_c(t_argument *arg, t_chain *chain, va_list ap)
 
 	ft_check_star(arg, ap);
 	chain->chain_arg = (char*)malloc((sizeof(char) * 2));
+	if (chain->chain_arg == NULL)
+		return ;
 	caracter = va_arg(ap, int);
 	if (caracter == 0)
 		chain->chain_arg[0] = '*';
@@ -44,5 +46,6 @@ void		ft_c(t_argument *arg, t_chain *chain, va_list ap)
 		ft_apply_width_ope_char(arg, chain, 1);
 	else
 		chain->chain_print = chain->chain_arg;
-	ft_print_car(chain->chain_print, caracter);
+	if (chain->chain_print != NULL)
+		ft_print_car(chain->chain_print, caracter);
 }

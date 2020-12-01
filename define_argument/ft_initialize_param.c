@@ -18,6 +18,15 @@ void	ft_initialize_param(t_param *param)
 	if (param != 0)
 	{
 		param->flags = ft_strdup("-0");
+		if (param->flags == NULL)
+			return ;
 		param->type_char = ft_strdup("cspdiuxX");
+		if (param->type_char == NULL)
+		{
+			if (param->flags != NULL)
+				free(param->flags);
+			free(param);
+			return ;
+		}
 	}
 }

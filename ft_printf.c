@@ -21,6 +21,8 @@ static void	ft_f(t_fct **ad, t_argument *arg, t_chain *chain, va_list ap)
 
 	tab = *ad;
 	index = ft_strdup("scdiuxXpP");
+	if (index == NULL)
+		return ;
 	i = -1;
 	while (++i < 9)
 	{
@@ -38,6 +40,8 @@ static void	ft_tab(t_argument *arg, t_chain *chain, va_list ap)
 	t_fct	*tab;
 
 	tab = (t_fct*)malloc(sizeof(tab) * 10);
+	if (tab == NULL)
+		return ;
 	tab[0] = &ft_s;
 	tab[1] = &ft_c;
 	tab[2] = &ft_d;
@@ -59,6 +63,8 @@ t_param *param)
 	int			len;
 
 	arg = (t_argument*)malloc(sizeof(t_argument));
+	if (arg == NULL)
+		return (-1);
 	ft_initialize_argument(format, arg, param);
 	if (arg->chain == NULL)
 	{
@@ -66,9 +72,11 @@ t_param *param)
 		return (-1);
 	}
 	chain = (t_chain *)malloc(sizeof(t_chain));
+	if (chain == NULL)
+		return (-1);
 	ft_tab(arg, chain, ap);
 	if (chain->chain_print != NULL)
-		len = ft_strlen(chain->chain_print);
+		len = (int)ft_strlen(chain->chain_print);
 	else
 		len = -1;
 	if (len != -1 && arg->space == 1)
@@ -116,6 +124,8 @@ int			ft_printf(const char *format, ...)
 	res = 0;
 	va_start(ap, format);
 	param = (t_param *)malloc(sizeof(t_param));
+	if (param == 0)
+		return (-1);
 	ft_initialize_param(param);
 	ft_read_line(format, ap, param, &res);
 	va_end(ap);

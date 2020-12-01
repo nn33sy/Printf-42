@@ -68,7 +68,7 @@ char			*ft_itoa_base(long long n, char *base)
 
 	if (n < 0)
 		n *= -1;
-	len = ft_strlen(base);
+	len = (int)ft_strlen(base);
 	order = ft_checkorder_base(n, len);
 	s = (char*)malloc(sizeof(char) * (order + 1));
 	if (s == 0)

@@ -18,6 +18,11 @@ void	ft_apply_width_ope_char(t_argument *arg, t_chain *chain, int len)
 	char	*pad;
 
 	pad = (char*)malloc(sizeof(char) * arg->width + 1);
+	if (pad == NULL)
+	{
+		chain->chain_print = NULL;
+		return ;
+	}
 	if (ft_comp(arg->flags, '0') == 1)
 		pad = ft_memset(pad, '0', arg->width);
 	else

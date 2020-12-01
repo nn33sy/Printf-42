@@ -23,6 +23,9 @@ void	ft_s(t_argument *arg, t_chain *chain, va_list ap)
 		chain->chain_arg = ft_strdup("(null)");
 	else
 		chain->chain_arg = ft_strdup(chain_arg);
+	if (chain->chain_arg == NULL)
+		return ;
 	ft_apply_s(arg, chain);
-	ft_putstr_fd(chain->chain_print, 1);
+	if (chain->chain_print != NULL)
+		ft_putstr_fd(chain->chain_print, 1);
 }
