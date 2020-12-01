@@ -94,8 +94,10 @@ int	ft_printf(const char * format,...)
 			ft_putchar_fd(*format, 1);
 			res++;
 		}
+
 		format++;
 		res += inter;
+		inter = 0;
 	}
 	va_end(ap);
 	free(param->flags);
