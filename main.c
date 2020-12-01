@@ -1,5 +1,6 @@
 
 //#define INT_MAX 2147483647
+#include "libftprintf.h"
 #include <stdio.h>
 int main()
 {
@@ -24,7 +25,7 @@ int main()
 
 //ft_printf2("%20.10d",-84);
 //printf("\n%20dh",84);
-printf("\n%20.10dh",-84);
+//printf("\n%20.10dh",-84);
 //printf("\n%20.2s\n",NULL);
 //printf("\n%xp\n",&a);
 //ft_printf2("%030p",&a);
@@ -158,7 +159,8 @@ printf("%50c", 0);
 // printf("%-5%\n");
 // printf("%05%\n");
 // printf("%-05%\n");
-printf("");
+ft_printf("%5.%");
+//printf("%5.%");
 //ft_printf("% c", 'a');
 
 

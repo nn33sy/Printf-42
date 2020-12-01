@@ -13,11 +13,8 @@
 #include "libft.h"
 #include "libftprintf.h"
 
-void	ft_initialize_argument(const char *format, t_argument *arg, t_param *param)
+static void	ft_space(const char *format, t_argument *arg)
 {
-	char *temp;
-
-	format++;
 	if (*format == ' ')
 		{
 			arg->space = 1;
@@ -25,15 +22,38 @@ void	ft_initialize_argument(const char *format, t_argument *arg, t_param *param)
 		}
 	else 
 		arg->space = 0;
+}
+static int ft_check_free(t_argument *arg, int yeye)
+{
+		if (arg->chain == NULL && yeye == 0)
+			return (-1);
+		if (arg->flags == NULL && yeye == 1)
+		{
+			free(arg->chain);
+			return(-1);
+		}
+		return(1);
+}
+
+void	ft_initialize_argument(const char *format, t_argument *arg, t_param *param)
+{
+	char *temp;
+
+	arg->chain = NULL;
+	arg->flags = NULL;
+	format++;
+	ft_space(format,arg);
 	while (*format == ' ')
 		format++;
 	ft_copyarg(format, arg, param);
-	if (arg->chain == 0)
-		return ;
+	if (ft_check_free(arg, 0) == -1)
+		return;
 	temp = arg->chain;
 	ft_flags(arg,param);
+	if (ft_check_free(arg, 1) == -1)
+		return;
 	ft_width(arg);
-	if (arg->width != -10 && arg->width != -1 && arg->space == 1)
+	if (arg->width > 0 && arg->space == 1)
 		arg->width--;
 	ft_prec(arg);
 	ft_type(arg,param);

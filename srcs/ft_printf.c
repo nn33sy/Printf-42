@@ -9,13 +9,14 @@ int ft_print_argument(const char *format, va_list ap, t_param *param)
 	t_chain *chain;
 	int	len;
 
-	chain = (t_chain *)malloc(sizeof(t_chain));
-	chain->chain_print = NULL;
-	chain->chain_arg = NULL;
 	arg = (t_argument*)malloc(sizeof(t_argument));
 	ft_initialize_argument(format, arg, param);
-	if (arg == 0)
-		return (-1);
+	if (arg->chain == NULL)
+	{
+		ft_free(arg, NULL);
+		return(-1);
+	}
+	chain = (t_chain *)malloc(sizeof(t_chain));
 	switch(arg->type){
 		case 's':
 			ft_s(arg, chain, ap);

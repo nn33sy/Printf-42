@@ -16,8 +16,8 @@ void ft_free(t_argument *arg, t_chain *chain)
         if (chain->chain_arg != 0 && chain->chain_arg == chain->chain_print)
             {
                 free(chain->chain_arg);
-                return;
                 free(chain);
+                return;
             }
         if (chain->chain_arg != 0)
             free(chain->chain_arg);

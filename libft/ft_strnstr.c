@@ -6,7 +6,7 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:09:38 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/18 19:00:40 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/11/25 13:29:45 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	i = 0;
 	j = 0;

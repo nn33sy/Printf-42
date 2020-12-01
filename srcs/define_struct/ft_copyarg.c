@@ -29,6 +29,4 @@ void	ft_copyarg(const char *format, t_argument *arg, t_param *param)
 		}
 		arg->chain = chain;
 	}
-	else
-		arg->chain = 0;
 }
