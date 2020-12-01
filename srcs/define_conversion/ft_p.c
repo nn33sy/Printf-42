@@ -33,7 +33,7 @@ void	ft_p(t_argument *arg, t_chain *chain, va_list ap)
 		free(hex);
 	}
 	free(chain_inter);
-	if (ft_strlen(chain->chain_arg) < arg->width)
+	if ((int)ft_strlen(chain->chain_arg) < arg->width)
 		ft_apply_width_nb(arg, chain, ft_strlen(chain->chain_arg));
 	else
 		chain->chain_print = chain->chain_arg;

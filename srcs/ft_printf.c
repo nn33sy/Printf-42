@@ -13,11 +13,11 @@
 #include "libft.h"
 #include "libftprintf.h"
 
-static void	ft_f(fct **ad, t_argument *arg, t_chain *chain, va_list ap)
+static void	ft_f(t_fct **ad, t_argument *arg, t_chain *chain, va_list ap)
 {
 	char	*index;
 	int		i;
-	fct		*tab;
+	t_fct	*tab;
 
 	tab = *ad;
 	index = ft_strdup("scdiuxXpP");
@@ -35,9 +35,9 @@ static void	ft_f(fct **ad, t_argument *arg, t_chain *chain, va_list ap)
 
 static void	ft_tab(t_argument *arg, t_chain *chain, va_list ap)
 {
-	fct		*tab;
+	t_fct	*tab;
 
-	tab = (fct*)malloc(sizeof(tab) * 10);
+	tab = (t_fct*)malloc(sizeof(tab) * 10);
 	tab[0] = &ft_s;
 	tab[1] = &ft_c;
 	tab[2] = &ft_d;
