@@ -6,7 +6,7 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:31:11 by how-choon         #+#    #+#             */
-/*   Updated: 2020/11/25 16:31:15 by how-choon        ###   ########.fr       */
+/*   Updated: 2020/12/02 12:40:42 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_ad(void *ptn, t_chain *chain, t_argument *arg)
 	free(chain_inter);
 }
 
-void		t_p(t_argument *arg, t_chain *chain, va_list ap)
+void		ft_p(t_argument *arg, t_chain *chain, va_list ap)
 {
 	void			*ptn;
 
